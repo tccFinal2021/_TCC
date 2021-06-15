@@ -1,0 +1,20 @@
+<?php
+if(!isset($_SESSION)){
+    session_start();
+}
+class AnimalController{
+    
+
+    public function inserir($nome, $sobrenome, $email, $senha){
+        require_once '../MODEL/Usuario.php';
+        $usuario = new usuario();
+        $usuario->setNome($nome);
+        $usuario->setSobrenome($sobrenome);
+        $usuario->setEmail($email);
+        $usuario->setSenha($senha);
+        //return $usuario->getNome();
+
+        $r = $usuario->inserirBD();
+        $_SESSION['Usuario'] = serialize($usuario);
+        return $r;
+    }

@@ -9,11 +9,11 @@
 >
             <h3>Receba Nossas Novidades</h3>
             <div class="text-center">
-              <form action="../CONTROLLER/testeRNavegacao.php" class="form-inline" method="$_POST">
+              <form action="../CONTROLLER/navegacao.php" method="post" class="form-inline" >
                 <div class="input-group">
                   <input
                     type="text"
-                    name="nome"
+                    name="txtNome"
                     class="form-control m-2"
                     placeholder="Nome"
                     aria-label="Username"
@@ -21,22 +21,21 @@
                   />
                   <input
                     type="text"
-                    name="email"
+                    name="txtEmail"
                     class="form-control m-2"
                     placeholder="Email"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
                   />
-                  <button class="btn btn-outline-success" type="button" id="btnReceberNovdd" name="btnReceberNovdd">
-                    Cadastrar
-                  </button>
+                  <button name="btnReceberNovdd" class="btn"  >Cadastrar</button>
+                 
                 </div>
               </form>
             </div>
           </nav>
         </div>
       </div>
-<footer id="main-footer">
+    <footer id="main-footer">
       <p>Pet shop TCC &copy; 2021, Todos direitos reservados</p>
     </footer>
     <script src="js/jquery-3.6.0.min.js"></script>

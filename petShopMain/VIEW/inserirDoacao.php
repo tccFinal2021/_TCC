@@ -63,42 +63,44 @@
     <div class="container">
         <h2 class="text-center">Insira os dados do seu pet</h2>
         <p><span class="error text-center">* Campos que devem ser preenchidos</span></p>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form action="../CONTROLLER/navegacao.php" method="post" >
             <div class="form-group">
                 <label for="name">Nome:</label>
-                <input type="name" class="form-control" id="email" placeholder="Digite nome do seu pet" name="name" value="<?php echo $name; ?>">
-                <span class="error">* <?php echo $nameErr; ?></span>
+                <input type="name" class="form-control"  placeholder="Digite nome do seu pet" name="txtNome" >
+                <span class="error">* </span>
             </div>
             <div class="form-group">
                 <label for="email">E-mail do doador:</label>
-                <input class="form-control" type="text" placeholder="Digite seu email" name="email" value="<?php echo $email; ?>">
-                <span class="error">* <?php echo $emailErr; ?></span>
+                <input class="form-control" type="email" placeholder="Digite seu email" name="txtEmail">
+                <span class="error">*</span>
             </div>
             <div class="form-group">
                 <label for="email">Telefone:</label>
-                <input class="form-control" type="number" name="telefone" placeholder="Digite o npumero do seu telefone" value="<?php echo $telefone; ?>">
-                <span class="error"><?php echo $telefoneErr; ?></span>
+                <input class="form-control" type="number" name="txtTel" placeholder="Digite o numero do seu telefone">
+                <span class="error">*</span>
             </div>
             <div class="form-group">
                 <label for="comment">Caracteristicas:</label>
-                <textarea class="form-control" name="caract" rows="5" id="caract"><?php echo $caract; ?></textarea>
-                <span class="error">* <?php echo $caractErr; ?></span>
+                <textarea class="form-control" name="txtCaracteristicas" rows="5" ></textarea>
+                <span class="error">* </span>
             </div>
             <div class="form-group">
                 <label for="comment">Saúde:</label>
-                <textarea class="form-control" name="saude" rows="5" id="comment"><?php echo $saude; ?></textarea>
-            <span class="error">* <?php echo $saudeErr; ?></span>
+                <textarea class="form-control" name="txtSaude" rows="5" ></textarea>
+            <span class="error">* </span>
             </div>
             <span>Sexo:</span>
-            <input type="radio" name="gender" <?php if (isset($gender) && $gender == "femea") echo "checked"; ?> value="femea">Femea
-            <input type="radio" name="gender" <?php if (isset($gender) && $gender == "macho") echo "checked"; ?> value="macho">Macho
-            <span class="error">* <?php echo $genderErr; ?></span>
+            <input type="radio" name="txtSexof"> Femea
+            <input type="radio" name="txtSexom" >Macho
+            <span class="error">* </span>
             <br><br>
-            <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+            <button class="btn btn-primary" name="btnCadPet"  >
+            Cadastrar Pet
+            </button>
         </form>
     </div>
 
-    <section class="adoteCard">
+    <section class="adoteCard" >
         <div class="card col-8 m-4">
             <img class="img-fluid" src="https://images.squarespace-cdn.com/content/v1/53bb46d6e4b05c06d49b574b/1584922821908-NGKK7OKW5HBQUV9FJNHJ/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/Jaden_crop.jpg?format=2500w" alt="Card image cap" />
             <div class="card-body">

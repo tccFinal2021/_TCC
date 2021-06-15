@@ -1,21 +1,21 @@
 <?php
-class receberNovddController{
+if(!isset($_SESSION)){
+    session_start();
+}
+class recebedorController{
+    
 
-    public function inserirBDRecebedor($nome, $email){
+    public function inserirBDR($nome, $email){
         require_once '../MODEL/receberNovdd.php';
-        $usuario = new receberNovdd();
-        $usuario->setNome($nome);
-        $usuario->setEmail($email);
-       
+        $recebedor = new recebedor();
+        $recebedor->setNome($nome);
+        $recebedor->setEmail($email);
 
+        $r = $recebedor->inserirBDR();
         
-        $r = $usuario->inserirBDRecebedor();
-        $_SESSION['Usuario'] = serialize($usuario);
-        return $$r;
+        
     }
-
-
-
 }
 
-?>
+
+    ?>

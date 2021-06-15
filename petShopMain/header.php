@@ -47,8 +47,12 @@
                 <a class="nav-link" href="VIEW/inserirDoacao.php">Doe um pet</a>
               </li>
             </ul>
-            <form action="CONTROLLER/navegacao.php"><button id="logarButton" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Entrar</button></form>
-            <form action="CONTROLLER/signout.php"><button id="cadastrarButton" class="btn btn-light my-2 my-sm-0" type="submit">Cadastrar</button></form>
+            <form action="CONTROLLER/navegacao.php" method="$_POST">
+              <button id="logarButton" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Entrar</button>
+            </form>
+            <form action="CONTROLLER/signout.php">
+              <button id="cadastrarButton" class="btn btn-light my-2 my-sm-0" type="submit">Cadastrar</button>
+            </form>
           </div>
         </nav>
       </header>
