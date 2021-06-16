@@ -1,6 +1,6 @@
     <?php
     include_once 'headerBlog.php';
-
+/*
     // define variables and set to empty values
     $tituloErr = $descritivoErr = $imagemErr = $descPostErr  = "";
     $titulo = $descritivo = $comment = $imagem = $descPost = "";
@@ -37,7 +37,7 @@
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
-    }
+    }*/
     ?>
     <div class="container">
         <h2 class="text-center">Insira dados do novo post do blog</h2>
@@ -59,8 +59,8 @@
                 <span class="error"></span>
             </div>
             <div class="form-group">
-                <label for="comment">Descritivo do post:</label>
-                <textarea class="form-control" name="txtdescPost" rows="5"></textarea>
+                <label for="txtDescPost">Descritivo do post:</label>
+                <textarea class="form-control" name="txtDescPost" rows="5"></textarea>
                 <span class="error">*</span>
             </div>
             <button class="btn btn-primary"  name="btnSalvarPost" >Salvar</button>
@@ -69,12 +69,12 @@
 
     <section class="adoteCard">
         <div class="card col-8 m-4">
-            <img class="img-fluid" src="<?php echo $imagem; ?>" alt="Card image cap" />
+            <img class="img-fluid" src="<?php //echo $imagem; ?>" alt="Card image cap" />
             <div class="card-body">
-                <h3 class="card-title"><?php echo $titulo; ?></h3>
+                <h3 class="card-title"><?php // echo $titulo; ?></h3>
                 <hr>
                 <p class="card-text">
-                    <?php echo $descPost; ?>
+                    <?php //echo $descPost; ?>
                 </p>
             </div>
             <form action="blog.html"><button class="btn btn-outline-success m-4" type="submit">Voltar</button></form>

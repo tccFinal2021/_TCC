@@ -6,7 +6,7 @@ if(!isset($_SESSION))
     session_start(); 
 } 
 
-
+        //botao de cadastro de usuário
     if(isset($_POST["btnCadastrar"]))
     {
         require_once '../Controller/UsuarioController.php';
@@ -26,7 +26,8 @@ if(!isset($_SESSION))
     else{
         if(isset($_POST["btnCadRealizado"]))
         {
-            include_once '../View/principal.php';
+            header("location:tttt.php")
+            or die("não ignore meu header");
         }
         else{
             if(isset($_POST["btnCadNRealizado"]))
@@ -35,9 +36,50 @@ if(!isset($_SESSION))
             }     
         }
     } 
+    
+//botao de login para adm chama a pag de login de adm
+if(isset($_POST["btnLoginAdm"]))
+{
 
 
-    //botao de cadastro para recebedor de novidades
+ //if(aController->inserir($_POST))
+}
+//enviando o login de adm
+if (isset($_POST['btnLogandoAdm'])){
+    include_once 'admController.php';
+
+}
+//click do botao que gera lista de usuarios cadastrados
+if (isset($_POST["btnListaUsuariosCadastrados"])){
+    include_once '../VIEW/listaUsuariosCad.php';
+}
+//click do botao btnVoltarHome da lista de cadastrados
+if (isset($_POST["btnVoltarHome"])){
+    header("location:../VIEW/admPrincipal.php")
+     or die("não ignore meu header");
+}
+//botao de link para form de novo adm
+if (isset($_POST["btncadastroAdm"])){
+    header("location:../VIEW/cadAdmForm.php")
+     or die("não ignore meu header");
+}
+
+//botao de cadastro de novo admim
+if (isset($_POST["btnCadastrarAdm"])){
+    require_once 'admController.php';
+    $aController = new admController;
+    if($aController->inserirBD($_POST["txtNome"], $_POST["txtSobrenome"], $_POST["txtEmail"], 
+    $_POST["txtSenha"]))
+    { 
+        include_once '../VIEW/cadastroRealizado.php';
+    }
+    else
+    {
+        include_once '../VIEW/cadastroNRealizado.php';
+    }
+}
+
+//botao de cadastro para recebedor de novidades
 
          if (isset ($_POST["btnReceberNovdd"])){
             require_once 'receberNovddController.php';
@@ -45,7 +87,8 @@ if(!isset($_SESSION))
             if($rcontroller->inserirBDR($_POST["txtNome"], $_POST["txtEmail"])){
            
          }
- include_once '../tttt.php';
+         header("location:../VIEW/admPrincipal.php")
+     or die("não ignore meu header");
     }
 
 

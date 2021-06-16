@@ -99,7 +99,7 @@ public function inserirBD(){
                 $conn->close();
                 return false;
             }
-    }
+    }*/
     public function atualizarBD(){
         require_once 'conexaoBD.php';
         $con = new ConexaoBD();
@@ -108,7 +108,7 @@ public function inserirBD(){
             die("conection failed: ". $conn->connect_error);
 
         }
-        $sql = "UPDATE usuario SET nome = '".$this->nome."', sobrenome ='".$this->sobrenome."', dataNascimento = '".$this->dataNascimento."', email= '".$this->email."' WHERE idusuario = '".$this->id."'" ;
+        $sql = "UPDATE usuarioteste SET nome = '".$this->nome."', sobrenome ='".$this->sobrenome."', dataNascimento = '".$this->dataNascimento."', email= '".$this->email."' WHERE idusuario = '".$this->id."'" ;
         if ($conn->query($sql) === TRUE) {
             $conn -> close();
             return TRUE;
@@ -116,6 +116,41 @@ public function inserirBD(){
             $conn-> close();
             return FALSE;
         }
-    }*/
+    }
+
+    public function excluirBD(){
+        require_once 'ConexaoBD.php';
+        $con = new ConexaoBD();
+        $conn = $con->conectar();
+        
+        if ($conn->connect_error){
+            die("conection failed: ". $conn->connect_error);
+        }
+
+        $sql = "DELETE FROM usuarioteste where id = '".$id."';";
+        if ($conn->query($sql) === TRUE) {
+            $conn -> close();
+            return TRUE;
+        } else {
+            $conn-> close();
+            return FALSE;
+        }
+    }
+
+
+    public function listaUsuarios()
+    {
+        require_once 'ConexaoBD.php'; 
+        
+        $con = new ConexaoBD();
+        $conn = $con->conectar();
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
+        $sql = "SELECT * FROM usuario;" ;
+        $re = $conn->query($sql);
+        $conn->close();
+        return $re;
+    }
 }
 ?>

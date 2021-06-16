@@ -20,7 +20,7 @@ class UsuarioController{
     }
 
 
-   /* public function atualizar($id, $nome, $sobrenome, $email, $dataNascimento){
+    public function atualizar($id, $nome, $sobrenome, $email, $dataNascimento){
         require_once '../MODEL/Usuario.php';
         $usuario = new usuario();
         $usuario->setId($id);
@@ -31,6 +31,6 @@ class UsuarioController{
         $r = $usuario->atualizarBD();
         $_SESSION['usuario'] = serialize($usuario);
         return $r;
-    }*/
+    }
 }
 ?>

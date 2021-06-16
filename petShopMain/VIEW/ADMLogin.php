@@ -13,12 +13,12 @@
 
     <div id="container">
         <div class="form-wrap">
-          <h1>Entre</h1>
+          <h1>Entre como Administrador</h1>
           <p>Faça o login</p>
           <form action="../CONTROLLER/navegacao.php">            
             <div class="form-group">
               <label for="txtEmail">Email</label>
-              <input type="email" name="txtEmail" id="email" />
+              <input type="email" name="txtEmail" />
             </div>
             <div class="form-group">
               <label for="txtSenha">Senha</label>
@@ -28,17 +28,13 @@
                 <input type="checkbox" id="lembrar" name="lembrar">
                 <label for="login">Lembrar-se</label>
             </div>
-            <button name="btnLogar" type="submit" class="btn" value="">
+            <button name="btnLogandoAdm" type="submit" class="btn" value="">
             Entrar
             </button>
           </form>
           <footer>
-          <p>Não tem uma conta? <a style="background-color: #25BE96;" href="signup.php">Faça o cadastro aqui</a></p> 
-          <form action="../CONTROLLER/navegacao.php" method="post">
-             <button class="w3-center" name="btnLogarAdm" type="submit"  >
-              Entrar como Administrador
-              </button>
-          </form>
+          <p>Não tem uma conta? Solicite a algum administrador inserir seu cadastro</a></p> 
+          
         </footer>
         </div>
         
