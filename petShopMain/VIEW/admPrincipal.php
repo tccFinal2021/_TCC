@@ -1,4 +1,6 @@
 <?php
+include_once '../MODEL/adm.php';
+include_once '../CONTROLLER/admController.php';
  if(!isset($_SESSION)) 
  { 
  session_start(); 
@@ -54,11 +56,17 @@
                 <a class="nav-link" href="inserirDoacao.php">Doe um pet</a>
               </li>
             </ul>
-            <form action="CONTROLLER/navegacao.php" method="$_POST">
-              <button id="logarButton" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Entrar</button>
+            <form action="../CONTROLLER/navegacao.php" method="POST">
+              <button name="btnLogarAdm" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">
+              Entrar</button>
             </form>
-            <form action="../CONTROLLER/navegacao.php">
-              <button class="btncadastroAdm" class="btn btn-light my-2 my-sm-0" type="submit">Cadastrar Novo Adm</button>
+            <form action="../CONTROLLER/navegacao.php" method="POST">
+              <button class="btncadastroAdm" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Novo Adm</button>
+            </form>
+            
+            <form action="../CONTROLLER/navegacao.php" method="POST">
+              <button class="btnFormProd" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Novo Produto</button>
+
             </form>
           </div>
         </nav>

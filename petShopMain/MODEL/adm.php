@@ -76,7 +76,7 @@ public function inserirBD(){
     }
 
 
-public function carregarAdm($id)
+public function carregarAdm($email)
     {
     require_once 'ConexaoBD.php'; 
     
@@ -85,14 +85,15 @@ public function carregarAdm($id)
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
-    $sql = "SELECT * FROM administrador WHERE cpf = ".$cpf ;
+    $sql = "SELECT * FROM administrador WHERE email = ".$email ;
     $re = $conn->query($sql);
     $r = $re->fetch_object();
     if($r != null)
     {
         $this->id = $r->id;
         $this->nome = $r->nome;
-        $this->cpf = $r->cpf;
+        $this->sobrenome = $r->sobrenome;
+        $this->email = $r->email;
         $this->senha = $r->senha;
 
         $conn->close();
@@ -103,11 +104,33 @@ public function carregarAdm($id)
         $conn->close();
         return false;
     }
+    }
+       
+    public function listaUsuarios()
+    {
+    require_once 'ConexaoBD.php'; 
+    
+    $con = new ConexaoBD();
+    $conn = $con->conectar();
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    } 
+    $sql = "SELECT id, nome, sobrenome, email FROM usuarioteste; " ;
+    $re = $conn->query($sql);
+    $conn->close();
+    return $re;
+    }
+
+
+
+
+
+
  }
 
  
 
 
 
-}
+
 ?>

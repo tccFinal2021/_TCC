@@ -32,5 +32,15 @@ class UsuarioController{
         $_SESSION['usuario'] = serialize($usuario);
         return $r;
     }
+    public function gerarLista()
+    {
+    require_once '../MODEL/usuario.php';
+    
+    $u = new Usuario();
+    
+    return $results = $u->listaUsuarios();
+    }
+   
+   
 }
 ?>

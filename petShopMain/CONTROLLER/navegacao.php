@@ -1,12 +1,12 @@
 <?php
 
-
+/*
 if(!isset($_SESSION))
 { 
     session_start(); 
-} 
+} */
 
-        //botao de cadastro de usuário
+    //botao de cadastro de usuário
     if(isset($_POST["btnCadastrar"]))
     {
         require_once '../Controller/UsuarioController.php';
@@ -36,32 +36,75 @@ if(!isset($_SESSION))
             }     
         }
     } 
-    
-//botao de login para adm chama a pag de login de adm
-if(isset($_POST["btnLoginAdm"]))
+//botao para chamar formulario de cadastro de produto
+
+if (isset($_POST["btnFormProd"])){
+    header("location:../VIEW/inserirProduto.php")
+            or die("não ignore meu header");
+   
+}
+
+//botao de cadastrar produto no  bd
+if(isset($_POST["btnInserirProd"]))
 {
+    require_once '../CONTROLLER/produtoController.php';
+    $pController = new ProdutoController();
 
+    if($pController->inserir($_POST["txtCodEmbalagem"], $_POST["txtNomeProd"], date('Y-m-d', strtotime($_POST['dataValidade'])), 
+    $_POST["txtQuantidadeProd"], $_POST["txtValorProd"], $_POST["txtMarcaProd"], $_POST["txtDescProd"]))
+    { 
+        include_once '../View/cadastroRealizado.php';
+    }
+    else
+    {
+        include_once '../View/cadastroNaoRealizado.php';
+    }
 
- //if(aController->inserir($_POST))
 }
-//enviando o login de adm
-if (isset($_POST['btnLogandoAdm'])){
-    include_once 'admController.php';
 
+
+//botao de login para adm chama a pag de login de adm
+if(isset($_POST["btnLogarAdm"]))
+{
+    header("location:../VIEW/ADMLogin.php")
+            or die("não ignore meu header");
 }
-//click do botao que gera lista de usuarios cadastrados
+
+
+// verificando se adm está cadastrado
+if(isset($_POST["btnLogandoAdm"]))
+{
+ require_once '../Controller/admController.php';
+ $aController = new AdmController();
+ 
+ if($aController->login($_POST["txtEmailADM"], $_POST["txtSenhaADM"]))
+ { 
+    include_once '../VIEW/admPrincipal.php';
+ }
+ else
+ {
+ 
+ }
+}
+
+
+//click do botao que chama lista de usuarios cadastrados
 if (isset($_POST["btnListaUsuariosCadastrados"])){
     include_once '../VIEW/listaUsuariosCad.php';
 }
+
+
 //click do botao btnVoltarHome da lista de cadastrados
 if (isset($_POST["btnVoltarHome"])){
     header("location:../VIEW/admPrincipal.php")
      or die("não ignore meu header");
 }
+
 //botao de link para form de novo adm
-if (isset($_POST["btncadastroAdm"])){
-    header("location:../VIEW/cadAdmForm.php")
-     or die("não ignore meu header");
+if (isset($_POST['btncadastroAdm'])){
+    /*header("location:../VIEW/cadAdmForm.php")
+     or die("não ignore meu header");*/
+     include_once '../VIEW/cadAdmForm.php';
 }
 
 //botao de cadastro de novo admim
@@ -202,108 +245,6 @@ if(isset($_POST["btnAtualizar"]))
         {
             include_once '../View/operacaoNaoRealizada.php';
         }
-    }
-
-
-
-    if(isset($_POST["btnExcluirFA"]))
- {
- require_once '../Controller/FormacaoAcadController.php';
- include_once '../Model/Usuario.php';
- 
- $fController = new FormacaoAcadController();
- if($fController->remover($_POST['id']) == true)
- { 
- include_once '../View/informacaoExcluida.php';
- }
- else
- {
- include_once '../View/operacaoNaoRealizda.php';
- }
- 
- }
- if(isset($_POST["btnPrincipal"]) || isset($_POST["btnAtualizacaoCadastro"]) || 
- isset($_POST["btnCadRealizado"])
-  || isset($_POST["btnInfInserir"]) || isset($_POST["btnInfExcluir"]))
-  {
-  include_once '../View/principal.php';
-  }
-
-
-
-  //inserir
-
-if(isset($_POST["btnAddEP"]))
-{
-require_once '../Controller/ExperienciaProfissionalController.php';
-include_once '../Model/Usuario.php';
- 
-$epController = new ExperienciaProfissionalController();
- 
-if($epController->inserir(date('Y-m-d', strtotime($_POST['txtInicioEP'])), date('Y-m-d', 
-strtotime($_POST["txtFimEP"])), $_POST["txtEmpEP"], $_POST["txtDescEP"], 
-unserialize($_SESSION['Usuario'])->getID()) != false)
-{ 
- include_once '../View/informacaoInserida.php';
-}
-else
- {
- include_once '../View/operacaoNRealizada.php';
- } 
-}
-
-//excluir
-
-if(isset($_POST["btnExcluirEP"]))
-{
-require_once '../Controller/ExperienciaProfissionalController.php';
-include_once '../Model/Usuario.php';
- 
-$epController = new ExperienciaProfissionalController();
- 
-if($epController->remover($_POST['idEP']) == true)
-{ 
- include_once '../View/informacaoExcluida.php';
-}
-else
-{
- include_once '../View/operacaoNRealizada.php';
-} 
-}
-
-//inserir
-if(isset($_POST["btnAddOF"]))
-{
- require_once '../Controller/OutrasFormacoesController.php';
- include_once '../Model/Usuario.php';
- $fController = new OutrasFormacoesController();
-
- if($fController->inserir(date('Y-m-d', strtotime($_POST['txtInicioOF'])), date('Y-md', strtotime($_POST["txtFimOF"])), $_POST["txtDescOF"], unserialize($_SESSION['Usuario']) ->getID()) != false)
- { 
- include_once '../View/informacaoInserida.php';
- }
- else
- {
- include_once '../View/operacaoNaoRealizada.php';
- }
-}
-
-//excluir
-
-if(isset($_POST["btnExcluirOF"]))
-{
- require_once '../Controller/OutrasFormacoesController.php';
- include_once '../Model/Usuario.php';
- $fController = new OutrasFormacoesController();
- 
- if($fController->remover($_POST['id']) == true)
- { 
- include_once '../View/informacaoExcluida.php';
- }
- else
- {
- include_once '../View/operacaoNaoRealizada.php';
- }
-}*/
+   */
 
 ?>

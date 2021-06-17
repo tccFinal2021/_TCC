@@ -31,5 +31,39 @@ class AdmController{
         $_SESSION['adm'] = serialize($adm);
         return $r;
     }
+
+    
+    
+    public function login($email, $senha)
+    {
+        require_once '../MODEL/adm.php';
+        $adm = new Adm();
+        $adm->carregarAdm($email);
+        if($adm->getSenha() == $senha)
+        {
+            $_SESSION['Adm'] = serialize($adm);
+            return true;
+        }
+        else
+        {
+            return false;
+        } 
+    }
+
+    public function gerarLista()
+    {
+    require_once '../Model/Administrador.php';
+    
+    $u = new Adm();
+    
+    return $results = $u->listaUsuarios();
+    
+
+   }
 }
-?>
+   ?>
+   
+
+
+
+

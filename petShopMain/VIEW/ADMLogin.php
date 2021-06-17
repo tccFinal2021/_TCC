@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +15,14 @@
         <div class="form-wrap">
           <h1>Entre como Administrador</h1>
           <p>Faça o login</p>
-          <form action="../CONTROLLER/navegacao.php">            
+          <form action="../CONTROLLER/navegacao.php" method="post">            
             <div class="form-group">
               <label for="txtEmail">Email</label>
-              <input type="email" name="txtEmail" />
+              <input type="email" name="txtEmailADM" />
             </div>
             <div class="form-group">
               <label for="txtSenha">Senha</label>
-              <input type="password" name="txtSenha"/>
+              <input type="password" name="txtSenhaADM"/>
             </div>
             <div>
                 <input type="checkbox" id="lembrar" name="lembrar">

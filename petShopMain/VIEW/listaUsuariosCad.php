@@ -12,12 +12,6 @@
 <body>
  
 
-<?php
-if(!isset($_SESSION)) 
- { 
- session_start(); 
- }
- ?>
  <header class="w3-container w3-padding-32 w3-center " >
     <h1 class="w3-text-white w3-panel w3-cyan w3-round-large">
         Lista de Usuários Cadastrados no Sistema
@@ -31,8 +25,30 @@ if(!isset($_SESSION))
             <tr class="w3-center w3-blue">
             <th>Código</th>
             <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Email</th>
             </tr>
             <thead>
+
+
+            <?php
+              include_once '../MODEL/adm.php';
+              include_once '../CONTROLLER/admController.php';
+                $user = new Adm();
+                $results = $user->listaUsuarios();
+                if($results != null)
+                
+                while($row = $results->fetch_object()) {
+                echo '<tr>';
+                echo '<td style="width: 5%;">'.$row->id.'</td>';
+                echo '<td style="width: 50%;">'.$row->nome.'</td>';
+                echo '<td style="width: 50%;">'.$row->sobrenome.'</td>';
+                echo '<td style="width: 50%;">'.$row->email.'</td>';
+                echo '</tr>';
+                } 
+                ?>
+
+
         </table>
     </div>
  </div>
