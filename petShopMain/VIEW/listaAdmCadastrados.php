@@ -14,7 +14,7 @@
 
  <header class="w3-container w3-padding-32 w3-center " >
     <h1 class="w3-text-white w3-panel w3-cyan w3-round-large">
-        Lista de Usuários Cadastrados no Sistema
+        Lista de Administradores Cadastrados no Sistema
     </h1>
  </header>
 
@@ -34,15 +34,15 @@
 
 
             <?php
-              include_once '../MODEL/usuario.php';
-              include_once '../CONTROLLER/usuarioController.php';
-                $user = new Usuario();
-                $results = $user->listaUsuarios();
+              include_once '../MODEL/adm.php';
+              include_once '../CONTROLLER/AdmController.php';
+                $user = new Adm();
+                $results = $user->listaAdm();
                 if($results != null)
                 
                 while($row = $results->fetch_object()) {
                 echo '<tr>';
-                echo '<td style="width: 5%;">'.$row->id_user.'</td>';
+                echo '<td style="width: 5%;">'.$row->id.'</td>';
                 echo '<td style="width: 50%;">'.$row->nome.'</td>';
                 echo '<td style="width: 50%;">'.$row->sobrenome.'</td>';
                 echo '<td style="width: 50%;">'.$row->datanasc.'</td>';

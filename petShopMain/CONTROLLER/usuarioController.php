@@ -5,11 +5,12 @@ if(!isset($_SESSION)){
 class UsuarioController{
     
 
-    public function inserir($nome, $sobrenome, $email, $senha){
+    public function inserir($nome, $sobrenome, $dataNascimento, $email, $senha){
         require_once '../MODEL/Usuario.php';
         $usuario = new usuario();
         $usuario->setNome($nome);
         $usuario->setSobrenome($sobrenome);
+        $usuario->setDataNascimento($dataNascimento);
         $usuario->setEmail($email);
         $usuario->setSenha($senha);
         //return $usuario->getNome();
@@ -34,11 +35,11 @@ class UsuarioController{
     }
     public function gerarLista()
     {
-    require_once '../MODEL/usuario.php';
-    
-    $u = new Usuario();
-    
-    return $results = $u->listaUsuarios();
+        require_once '../MODEL/usuario.php';
+        
+        $u = new Adm();
+        
+        return $results = $u->listaUsuarios();
     }
    
    

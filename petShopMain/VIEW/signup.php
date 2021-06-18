@@ -45,6 +45,7 @@
             <label for="txtSenha2">Confirme a senha</label>
             <input type="password" name="txtSenha2" />
           </div>
+      
 
           <button name="btnCadastrar"  class="btn" >Cadastrar</button>
           <p class="bottom-text">

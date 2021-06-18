@@ -9,20 +9,20 @@ if(!isset($_SESSION))
     //botao de cadastro de usuário
     if(isset($_POST["btnCadastrar"]))
     {
-        require_once '../Controller/UsuarioController.php';
-        $uController = new UsuarioController();
- 
-        if($uController->inserir($_POST["txtNome"], $_POST["txtSobrenome"], $_POST["txtEmail"], 
-        $_POST["txtSenha"]))
-        { 
-            include_once '../View/cadastroRealizado.php';
-        }
-        else
-        {
-            include_once '../View/cadastroNaoRealizado.php';
-        }
-
-    }
+      
+            require_once '../Controller/UsuarioController.php';
+            $uController = new UsuarioController();
+    
+            if($uController->inserir($_POST["txtNome"], $_POST["txtSobrenome"], date('Y-m-d', strtotime($_POST['txtDataNasc'])), $_POST["txtEmail"], 
+            $_POST["txtSenha"]))
+            { 
+                include_once '../View/cadastroRealizado.php';
+            }
+            else
+            {
+                include_once '../View/cadastroNaoRealizado.php';
+            }
+    } 
     else{
         if(isset($_POST["btnCadRealizado"]))
         {
@@ -35,7 +35,8 @@ if(!isset($_SESSION))
                 include_once '../View/signup.php';
             }     
         }
-    } 
+    }  
+
 //botao para chamar formulario de cadastro de produto
 
 if (isset($_POST["btnFormProd"])){
@@ -92,6 +93,11 @@ if(isset($_POST["btnLogandoAdm"]))
 if (isset($_POST["btnListaUsuariosCadastrados"])){
     include_once '../VIEW/listaUsuariosCad.php';
 }
+//click do botao que chama lista de ADM cadastrados
+if (isset($_POST["btnListaAdmCadastrados"])){
+    include_once '../VIEW/listaAdmCadastrados.php';
+}
+
 
 
 //click do botao btnVoltarHome da lista de cadastrados

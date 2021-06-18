@@ -30,8 +30,7 @@ include_once '../CONTROLLER/admController.php';
             data-target="#navbarColor01"
             aria-controls="navbarColor01"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -56,23 +55,39 @@ include_once '../CONTROLLER/admController.php';
                 <a class="nav-link" href="inserirDoacao.php">Doe um pet</a>
               </li>
             </ul>
-            <form action="../CONTROLLER/navegacao.php" method="POST">
+
+            <form action="../CONTROLLER/navegacao.php" method="POST" >
               <button name="btnLogarAdm" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">
               Entrar</button>
             </form>
+
+            <form action="../CONTROLLER/navegacao.php" method="post">
+              <button name="btnListaUsuariosCadastrados" >
+              Listar Usuários cadastrados
+              </button>
+            </form>
+
+            <form action="../CONTROLLER/navegacao.php" method="post">
+              <button name="btnListaAdmCadastrados" >
+              Listar Administradores cadastrados
+              </button>
+            </form>
+
+
             <form action="../CONTROLLER/navegacao.php" method="POST">
               <button class="btncadastroAdm" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Novo Adm</button>
             </form>
             
             <form action="../CONTROLLER/navegacao.php" method="POST">
-              <button class="btnFormProd" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Novo Produto</button>
-
+              <button class="btnFormProd" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">
+              Novo Produto</button>
             </form>
+
           </div>
         </nav>
       </header>
 
-<section id="home-info" class="back-light">
+      <section id="home-info" class="back-light">
         <div class="info-img"></div>
         <div class="info-content">
           <h2><span id="textPrimary">Visite</span> nosso blog</h2>
@@ -97,13 +112,8 @@ include_once '../CONTROLLER/admController.php';
      
     </main>
     
-<div class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <form action="../CONTROLLER/navegacao.php" method="post">
-        <button name="btnListaUsuariosCadastrados" >
-            Listar Usuários cadastrados
-        </button>
-    </form> 
-</div>
+    
+
 
 
 

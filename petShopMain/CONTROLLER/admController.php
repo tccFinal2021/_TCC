@@ -52,14 +52,12 @@ class AdmController{
 
     public function gerarLista()
     {
-    require_once '../Model/Administrador.php';
-    
-    $u = new Adm();
-    
-    return $results = $u->listaUsuarios();
-    
-
-   }
+        require_once '../MODEL/adm.php';
+        
+        $a = new Adm();
+        
+        return $results = $a->listaAdm();
+    }
 }
    ?>
    

@@ -106,7 +106,7 @@ public function carregarAdm($email)
     }
     }
        
-    public function listaUsuarios()
+    public function listaAdm()
     {
     require_once 'ConexaoBD.php'; 
     
@@ -115,7 +115,7 @@ public function carregarAdm($email)
     if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     } 
-    $sql = "SELECT id, nome, sobrenome, email FROM usuarioteste; " ;
+    $sql = "SELECT * FROM administrador;" ;
     $re = $conn->query($sql);
     $conn->close();
     return $re;

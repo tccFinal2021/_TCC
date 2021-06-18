@@ -4,8 +4,8 @@ class Usuario{
     private $id;
     private $nome;
     private $sobrenome;
-    private $email;
     private $dataNascimento;
+    private $email;
     private $senha;
 
 
@@ -61,8 +61,8 @@ public function inserirBD(){
     if ($conn-> connect_error){
         die ("conection failed: ". $conn->connect_error); 
     }
-    $sql = "INSERT INTO usuarioteste (nome, sobrenome, email, senha)
-    VALUES ('".$this->nome."', '".$this->sobrenome."', '".$this->email."', '".$this->senha."')";
+    $sql = "INSERT INTO usuarioteste (nome, sobrenome, datanasc, email, senha)
+    VALUES ('".$this->nome."', '".$this->sobrenome."', '".$this->dataNascimento."','".$this->email."', '".$this->senha."')";
 
     if ($conn->query($sql) === TRUE) {
         $this ->id = mysqli_insert_id($conn);
@@ -74,6 +74,21 @@ public function inserirBD(){
         }
 
     }
+    
+ public function listaUsuarios()
+ {
+ require_once 'ConexaoBD.php'; 
+ 
+ $con = new ConexaoBD();
+ $conn = $con->conectar();
+ if ($conn->connect_error) {
+ die("Connection failed: " . $conn->connect_error);
+ } 
+ $sql = "SELECT * FROM usuarioteste;" ;
+ $re = $conn->query($sql);
+ $conn->close();
+ return $re;
+ }
 /*
     public function carregarUsuario (){
         require_once 'ConexaoBD.php';
@@ -118,7 +133,7 @@ public function inserirBD(){
         }
     }
 
-    public function excluirBD(){
+    public function excluirBD($id){
         require_once 'ConexaoBD.php';
         $con = new ConexaoBD();
         $conn = $con->conectar();
