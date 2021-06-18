@@ -4,8 +4,8 @@ class Adm{
     private $id;
     private $nome;
     private $sobrenome;
-    private $email;
     private $dataNascimento;
+    private $email;
     private $senha;
 
 
@@ -61,8 +61,8 @@ public function inserirBD(){
     if ($conn-> connect_error){
         die ("conection failed: ". $conn->connect_error); 
     }
-    $sql = "INSERT INTO administrador (nome, sobrenome, email, senha)
-    VALUES ('".$this->nome."', '".$this->sobrenome."', '".$this->email."', '".$this->senha."')";
+    $sql = "INSERT INTO administrador (nome, sobrenome, datanasc, email, senha)
+    VALUES ('".$this->nome."', '".$this->sobrenome."', '".$this->dataNascimento."','".$this->email."', '".$this->senha."')";
 
     if ($conn->query($sql) === TRUE) {
         $this ->id = mysqli_insert_id($conn);

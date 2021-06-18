@@ -95,7 +95,7 @@ if (isset($_POST["btnListaUsuariosCadastrados"])){
 }
 //click do botao que chama lista de ADM cadastrados
 if (isset($_POST["btnListaAdmCadastrados"])){
-    include_once '../VIEW/listaAdmCadastrados.php';
+    include_once '../VIEW/listaAdmCad.php';
 }
 
 
@@ -117,7 +117,7 @@ if (isset($_POST['btncadastroAdm'])){
 if (isset($_POST["btnCadastrarAdm"])){
     require_once 'admController.php';
     $aController = new admController;
-    if($aController->inserirBD($_POST["txtNome"], $_POST["txtSobrenome"], $_POST["txtEmail"], 
+    if($aController->inserirBD($_POST["txtNome"], $_POST["txtSobrenome"], date('Y-m-d', strtotime($_POST['txtDataNasc'])), $_POST["txtEmail"], 
     $_POST["txtSenha"]))
     { 
         include_once '../VIEW/cadastroRealizado.php';

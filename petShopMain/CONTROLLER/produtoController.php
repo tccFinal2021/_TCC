@@ -18,5 +18,14 @@ class ProdutoController{
         //$_SESSION['Usuario'] = serialize($usuario);
         return $r;
     }
+
+    public function gerarLista()
+    {
+        require_once '../MODEL/produto.php';
+        
+        $p = new Produto();
+        
+        return $results = $p->listaProdutos();
+    }
 }
 ?>

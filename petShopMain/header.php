@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="VIEW/css/app.css" />
     <link rel="stylesheet" href="VIEW/css/mobile.css" />
     <link rel="stylesheet" href="VIEW/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Pet shop | TCC</title>
   </head>
   <body>

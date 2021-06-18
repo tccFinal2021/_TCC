@@ -70,6 +70,8 @@ public function getDescricao(){
     return $this -> descricao;
     
 }
+
+//INSERT INTO PRODUTO
 public function inserirBD(){
     require_once 'ConexaoBD.php';
 
@@ -90,7 +92,21 @@ public function inserirBD(){
         return FALSE;
         }
     }
-
+//SELECT * FROM PRODUTO
+public function listaProdutos()
+ {
+ require_once 'ConexaoBD.php'; 
+ 
+ $con = new ConexaoBD();
+ $conn = $con->conectar();
+ if ($conn->connect_error) {
+ die("Connection failed: " . $conn->connect_error);
+ } 
+ $sql = "SELECT * FROM produto;" ;
+ $re = $conn->query($sql);
+ $conn->close();
+ return $re;
+ }
 
 
 

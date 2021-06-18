@@ -20,9 +20,9 @@
 
  <div class="w3-padding-128 w3-content w3-text-grey" >
     <div class="w3-container">
-        <table class="w3-table-all w3-centered " >
+        <table class="w3-table-all w3-centered" >
             <thead> 
-            <tr class="w3-center w3-cyan">
+            <tr class="w3-center">
             <th>Código</th>
             <th>Nome</th>
             <th>Sobrenome</th>
