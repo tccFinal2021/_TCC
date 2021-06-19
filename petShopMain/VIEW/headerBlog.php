@@ -45,7 +45,10 @@
               <a class="nav-link" href="inserirDoacao.php">Doe um pet</a>
             </li>
           </ul>
-          <form action="inserirBlog.php"><button id="cadButton" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Blog</button></form>
+          <form action="inserirBlog.php">
+          <button id="cadButton" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">
+          Blog</button>
+          </form>
           <form action="signin.php">
             <button
               id="cadButton"

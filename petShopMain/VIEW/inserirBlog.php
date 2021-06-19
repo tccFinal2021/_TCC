@@ -1,6 +1,6 @@
     <?php
     include_once 'headerBlog.php';
-
+/*
     // define variables and set to empty values
     $tituloErr = $descritivoErr = $imagemErr = $descPostErr  = "";
     $titulo = $descritivo = $comment = $imagem = $descPost = "";
@@ -37,44 +37,44 @@
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
-    }
+    }*/
     ?>
     <div class="container">
         <h2 class="text-center">Insira dados do novo post do blog</h2>
         <p><span class="error text-center">* Campos que devem ser preenchidos</span></p>
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form method="post" action="../CONTROLLER/navegacao.php">
             <div class="form-group">
                 <label for="titulo">Titulo:</label>
-                <input type="titulo" class="form-control" id="" placeholder="Digite o titulo do novo post" name="titulo" value="<?php echo $titulo; ?>">
-                <span class="error">* <?php echo $tituloErr; ?></span>
+                <input type="titulo" class="form-control" placeholder="Digite o titulo do novo post" name="txtTituloBlog" >
+                <span class="error">* </span>
             </div>
             <div class="form-group">
                 <label for="descritivo">Descritivo para card:</label>
-                <input class="form-control" type="text" placeholder="Digite um descritivo breve para o card da pagina principal do blog" name="descritivo" value="<?php echo $descritivo; ?>">
-                <span class="error">* <?php echo $descritivoErr; ?></span>
+                <input class="form-control" type="text" placeholder="Digite um descritivo breve para o card da pagina principal do blog" name="txtDescCard">
+                <span class="error">* </span>
             </div>
             <div class="form-group">
                 <label for="Imagem">Imagem:</label>
-                <input class="form-control" type="text" name="imagem" placeholder="Digite a url da imagem" value="<?php echo $imagem; ?>">
-                <span class="error"><?php echo $imagemErr; ?></span>
+                <input class="form-control" type="text" name="txtImgUrl" placeholder="Digite a url da imagem" >
+                <span class="error"></span>
             </div>
             <div class="form-group">
-                <label for="comment">Descritivo do post:</label>
-                <textarea class="form-control" name="descPost" rows="5" id="descPost"><?php echo $descPost; ?></textarea>
-                <span class="error">* <?php echo $descPostErr; ?></span>
+                <label for="txtDescPost">Descritivo do post:</label>
+                <textarea class="form-control" name="txtDescPost" rows="5"></textarea>
+                <span class="error">*</span>
             </div>
-            <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+            <button class="btn btn-primary"  name="btnSalvarPost" >Salvar</button>
         </form>
     </div>
 
     <section class="adoteCard">
         <div class="card col-8 m-4">
-            <img class="img-fluid" src="<?php echo $imagem; ?>" alt="Card image cap" />
+            <img class="img-fluid" src="<?php //echo $imagem; ?>" alt="Card image cap" />
             <div class="card-body">
-                <h3 class="card-title"><?php echo $titulo; ?></h3>
+                <h3 class="card-title"><?php // echo $titulo; ?></h3>
                 <hr>
                 <p class="card-text">
-                    <?php echo $descPost; ?>
+                    <?php //echo $descPost; ?>
                 </p>
             </div>
             <form action="blog.html"><button class="btn btn-outline-success m-4" type="submit">Voltar</button></form>

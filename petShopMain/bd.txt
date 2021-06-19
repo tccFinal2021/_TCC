@@ -1,0 +1,32 @@
+//scripts testes utilizados no workbench
+
+create table recebernovdd (
+id int(10) not null auto_increment primary key,
+nome varchar(40),
+email varchar(30)
+);
+
+describe recebernovdd;
+select * from recebernovdd;
+
+create table animaldois (
+id int (20) not null auto_increment primary key,
+nome varchar (20),
+email varchar(30),
+tel int(15),
+caracteristicas varchar(150),
+saude varchar(150),
+sexo char);
+
+describe animaldois;
+select * from animaldois;
+
+create table blog (
+id int (20) not null auto_increment primary key,
+titulo varchar(50),
+desccard varchar (150),
+imgurl varchar (150),
+descpost varchar(500));
+
+desc blog;
+select * from blog;

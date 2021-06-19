@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="css/mobile.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <title>Pet shop | TCC</title>
   </head>
   <body>
@@ -47,8 +49,13 @@
                 <a class="nav-link" href="inserirDoacao.php">Doe um pet</a>
               </li>
             </ul>
-            <form action="../CONTROLLER/navegacao.php"><button id="logarButton" class="btn btn-light my-2 my-sm-0 mr-2" type="submit">Entrar</button></form>
-            <form action="../CONTROLLER/navegacao.php"><button id="cadastrarButton" class="btn btn-light my-2 my-sm-0" type="submit">Cadastrar</button></form>
+            
+            <form action="../CONTROLLER/navegacao.php">
+            <input id="logarButton" class="btn btn-light my-2 my-sm-0 mr-2" type="submit" value="Entrar">
+            </form>
+            <form action="../CONTROLLER/navegacao.php">
+            <input id="cadastrarButton" class="btn btn-light my-2 my-sm-0" type="submit" value="Cadastrar">
+            </form>
           </div>
         </nav>
       </header>

@@ -12,8 +12,8 @@
     <div id="container">
     
       <div class="form-wrap">
-        <h1>Cadastro</h1>
-        <p>É de graça e leva apenas um minuto</p>
+        <h1>Cadastro de administrador</h1>
+        <p>Apenas pessoal selecionado</p>
         <form action="../CONTROLLER/navegacao.php" method="post">
 
           <div class="form-group">
@@ -45,9 +45,8 @@
             <label for="txtSenha2">Confirme a senha</label>
             <input type="password" name="txtSenha2" />
           </div>
-      
 
-          <button name="btnCadastrar"  class="btn" >Cadastrar</button>
+          <button name="btnCadastrarAdm"  class="btn" >Cadastrar</button>
           <p class="bottom-text">
             Clicando no botão acima vc concorda con nossos
             <a href="#">Termos e condições</a> and
