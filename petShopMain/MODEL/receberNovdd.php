@@ -51,5 +51,24 @@ public function inserirBDR(){
         }
 
     }
+
+
+    public function listaRecebedores()
+ {
+ require_once 'ConexaoBD.php'; 
+ 
+ $con = new ConexaoBD();
+ $conn = $con->conectar();
+ if ($conn->connect_error) {
+ die("Connection failed: " . $conn->connect_error);
+ } 
+ $sql = "SELECT * FROM recebernovdd;" ;
+ $re = $conn->query($sql);
+ $conn->close();
+ return $re;
+ }
+
+
+ 
 }
     ?>

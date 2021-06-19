@@ -89,7 +89,7 @@ public function inserirBD(){
  $conn->close();
  return $re;
  }
-/*
+
     public function carregarUsuario (){
         require_once 'ConexaoBD.php';
 
@@ -98,7 +98,7 @@ public function inserirBD(){
         if ($conn->connect_error){
             die("conection failed: ".$conn->connect_error);
         }
-        $sql = "SELECT * FROM usuario WHERE id = ".$id; 
+        $sql = "SELECT * FROM usuario WHERE email = ".$email; 
         $re =  $conn->query($sql);
         $r = $re->fetch_object();
         if ($r != null){
@@ -106,7 +106,7 @@ public function inserirBD(){
             $this->nome = $r->nome;
             $this->email = $r-> email;
             $this ->sobrenome = $r-> sobrenome;
-            $this ->dataNascimento = $r->getDataNascimento;
+            $this ->dataNascimento = $r->DataNascimento;
             $this ->senha = $r->senha;
             $conn->close();
             return true;
@@ -114,7 +114,8 @@ public function inserirBD(){
                 $conn->close();
                 return false;
             }
-    }*/
+    }
+
     public function atualizarBD(){
         require_once 'conexaoBD.php';
         $con = new ConexaoBD();
@@ -123,7 +124,7 @@ public function inserirBD(){
             die("conection failed: ". $conn->connect_error);
 
         }
-        $sql = "UPDATE usuarioteste SET nome = '".$this->nome."', sobrenome ='".$this->sobrenome."', dataNascimento = '".$this->dataNascimento."', email= '".$this->email."' WHERE idusuario = '".$this->id."'" ;
+        $sql = "UPDATE usuarioteste SET nome = '".$this->nome."', sobrenome ='".$this->sobrenome."', datanasc = '".$this->dataNascimento."', email= '".$this->email."' WHERE email = '".$this->email."'" ;
         if ($conn->query($sql) === TRUE) {
             $conn -> close();
             return TRUE;
@@ -133,7 +134,7 @@ public function inserirBD(){
         }
     }
 
-    public function excluirBD($id){
+    public function excluirBD($email){
         require_once 'ConexaoBD.php';
         $con = new ConexaoBD();
         $conn = $con->conectar();
@@ -142,7 +143,7 @@ public function inserirBD(){
             die("conection failed: ". $conn->connect_error);
         }
 
-        $sql = "DELETE FROM usuarioteste where id = '".$id."';";
+        $sql = "DELETE FROM usuarioteste where email = '".$email."';";
         if ($conn->query($sql) === TRUE) {
             $conn -> close();
             return TRUE;

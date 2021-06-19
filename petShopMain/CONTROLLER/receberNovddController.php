@@ -15,6 +15,15 @@ class recebedorController{
         
         
     }
+
+    public function gerarLista()
+    {
+        require_once '../MODEL/receberNovdd.php';
+        
+        $r = new Recebedor();
+        
+        return $results = $r->listaRecebedores();
+    }
 }
 
 

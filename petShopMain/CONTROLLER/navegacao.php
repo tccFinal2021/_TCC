@@ -1,10 +1,10 @@
 <?php
 
-/*
+
 if(!isset($_SESSION))
 { 
     session_start(); 
-} */
+} 
 
     //botao de cadastro de usuário
     if(isset($_POST["btnCadastrar"]))
@@ -16,11 +16,13 @@ if(!isset($_SESSION))
             if($uController->inserir($_POST["txtNome"], $_POST["txtSobrenome"], date('Y-m-d', strtotime($_POST['txtDataNasc'])), $_POST["txtEmail"], 
             $_POST["txtSenha"]))
             { 
-                include_once '../View/cadastroRealizado.php';
+                header("location:../View/cadastroRealizado.php")
+            or die("não ignore meu header");
             }
             else
             {
-                include_once '../View/cadastroNaoRealizado.php';
+                header("location:../View/cadastroNRealizado.php")
+            or die("não ignore meu header");
             }
     } 
     else{
@@ -91,14 +93,29 @@ if(isset($_POST["btnLogandoAdm"]))
 
 //click do botao que chama lista de usuarios cadastrados
 if (isset($_POST["btnListaUsuariosCadastrados"])){
-    include_once '../VIEW/listaUsuariosCad.php';
+    header("Location: ../VIEW/listaUsuariosCad.php") 
+    or die("não ignore meu head");
 }
 //click do botao que chama lista de ADM cadastrados
 if (isset($_POST["btnListaAdmCadastrados"])){
-    include_once '../VIEW/listaAdmCad.php';
+    header("Location: ../VIEW/listaAdmCadastrados.php") 
+    or die("não ignore meu head");
 }
-
-
+//click do botao que chama lista de Postagens do blog
+if (isset($_POST["btnListaPost"])){
+    header("Location: ../VIEW/listaPostagens.php") 
+    or die("não ignore meu head");
+}
+//click do botao que chama lista de Animais cadastrados
+if (isset($_POST["btnListaAnimais"])){
+    header("Location: ../VIEW/listaAnimaisCadastrados.php") 
+    or die("não ignore meu head");
+}
+//click do botao que chama lista de Produtos cadastrados
+if (isset($_POST["btnListarProdutos"])){
+    header("Location: ../VIEW/listaProdutosCadastrados.php") 
+    or die("não ignore meu head");
+}
 
 //click do botao btnVoltarHome da lista de cadastrados
 if (isset($_POST["btnVoltarHome"])){
@@ -107,10 +124,10 @@ if (isset($_POST["btnVoltarHome"])){
 }
 
 //botao de link para form de novo adm
-if (isset($_POST['btncadastroAdm'])){
-    /*header("location:../VIEW/cadAdmForm.php")
-     or die("não ignore meu header");*/
-     include_once '../VIEW/cadAdmForm.php';
+if (isset($_POST["btncadastroAdm"])){
+    header("location:../VIEW/cadAdmForm.php")
+     or die("não ignore meu header");
+     
 }
 
 //botao de cadastro de novo admim
@@ -136,7 +153,7 @@ if (isset($_POST["btnCadastrarAdm"])){
             if($rcontroller->inserirBDR($_POST["txtNome"], $_POST["txtEmail"])){
            
          }
-         header("location:../VIEW/admPrincipal.php")
+         header("location:../tttt.php")
      or die("não ignore meu header");
     }
 
@@ -190,7 +207,9 @@ if (isset($_POST["btnCadastrarAdm"])){
         $bController = new BlogController();
         
         if ($bController->inserirBDBlog($_POST["txtTituloBlog"], $_POST["txtDescCard"], $_POST["txtImgUrl"], $_POST["txtDescPost"])){
-            include_once '../VIEW/cadastroRealizado.php';
+            
+            header("location: ../VIEW/cadastroRealizado.php")
+             or die("deixe meu head em paz");
         }
     }
 

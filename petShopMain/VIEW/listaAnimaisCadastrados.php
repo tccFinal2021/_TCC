@@ -13,7 +13,7 @@
               style="width: 18rem"
             />
             <div class="card-body">
-              <h5 class="card-title"><?php echo $row->nome?></h5>
+              <h5 class="card-title"><?php //echo $row->nome?></h5>
               <p class="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
@@ -46,50 +46,48 @@
         margin-right: 20px;
         width: 98%;
     }
-    .column{ 
-      padding: 10px;
-      border: 1px solid while;
+    .column{ padding: 10px;
+      border: 1px solid white;
     }
 </style>
 
 <header class="w3-container w3-padding-32 w3-center " >
-    <h1 class="w3-text-white w3-panel  w3-round-large" style="background-color: #007BFF;">
-        Lista de Produtos Cadastrados no Sistema    
+    <h1 class="w3-text-white w3-panel w3-round-large w3-center" style="background-color: #007BFF;">
+        Lista de Animais Cadastrados no Sistema    
     </h1>
  </header>
 
-<div class=" w3-content w3-text-black " style="background-color: #007BFF;" >
+<div class=" w3-content w3-text-grey" style="background-color: #007BFF;">
     <div class="w3-container"id="tabela" >
         <table class="w3-table-all w3-centered " >
             <thead> 
-            <tr class="w3-center w3-text-black" style="background-color: #007BFF;">
-            <th class="column w3-text-white">Id</th>
-            <th class="column w3-text-white">Código</th>
-            <th class="column w3-text-white">Nome</th>
-            <th class="column w3-text-white">Data de Validade</th>
-            <th class="column w3-text-white">Quantidade em Estoque</th>
-            <th class="column w3-text-white">Valor</th>
-            <th class="column w3-text-white">Marca</th>
-            <th class="column w3-text-white">descrição</th>
+            <tr class="w3-center w3-text-white" style="background-color: #007BFF;">
+            <th class="column">Id</th>
+            <th class="column">Nome</th>
+            <th class="column">Email</th>
+            <th class="column">Telefone</th>
+            <th class="column">Características</th>
+            <th class="column">Saúde</th>
+            <th class="column">Sexo</th>
             </tr>
             <thead>
 <?php
-              include_once '../MODEL/produto.php';
-              include_once '../CONTROLLER/produtoController.php';
-                $produto = new Produto();
-                $results = $produto->listaProdutos();
+              include_once '../MODEL/animal.php';
+              include_once '../CONTROLLER/animalController.php';
+                $animal = new Animal();
+                $results = $animal->listarAnimais();
                 if($results != null)
                 
                 while($row = $results->fetch_object()) {
                 echo '<tr>';
-                echo '<td  class="column "style="width: 5%;">'.$row->cod_produto.'</td>';
-                echo '<td  class="column"style="width: 5%;">'.$row->cod_embalagem.'</td>';
+                echo '<td  class="column"style="width: 5%;">'.$row->id.'</td>';
                 echo '<td  class="column"style="width: 5%;">'.$row->nome.'</td>';
-                echo '<td  class="column"style="width: 5%;">'.$row->validade.'</td>';
-                echo '<td  class="column"style="width: 5%;">'.$row->quantidade_estoque.'</td>';
-                echo '<td  class="column"style="width: 5%;">'.$row->valor.'</td>';
-                echo '<td  class="column"style="width: 10%;">'.$row->marca.'</td>';
-                echo '<td  class="column"style="width: 60%;">'.$row->descricao.'</td>';
+                echo '<td  class="column"style="width: 5%;">'.$row->email.'</td>';
+                echo '<td  class="column"style="width: 5%;">'.$row->tel.'</td>';
+                echo '<td  class="column"style="width: 5%;">'.$row->caracteristicas.'</td>';
+                echo '<td  class="column"style="width: 5%;">'.$row->saude.'</td>';
+                echo '<td  class="column"style="width: 10%;">'.$row->sexo.'</td>';
+                
                 echo '</tr>';
                 } 
                 ?>
@@ -98,7 +96,6 @@
         </table>
     </div>
 </div>
-
 
 <div class="w3-padding-128 w3-content w3-text-grey">
     <form action="../CONTROLLER/navegacao.php" method="post" class="w3-container w3-light-grey w3-textblue w3-margin w3-center" style="width: 30%;">
@@ -111,6 +108,7 @@
         </div>
     </form>
 </div>
-                <?php
-                include_once 'bota.php';
-                ?>
+
+<?php
+  include_once 'bota.php';
+ ?>

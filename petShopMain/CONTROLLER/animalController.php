@@ -1,7 +1,8 @@
 <?php
+/*
 if(!isset($_SESSION)){
     session_start();
-}
+}*/
 class AnimalController{
     
 
@@ -19,6 +20,15 @@ class AnimalController{
         $r = $animal->inserirBDA();
         //$_SESSION['Usuario'] = serialize($usuario);
         return $r;
+    }
+
+    public function gerarLista()
+    {
+        require_once '../MODEL/animal.php.php';
+        
+        $a = new Animal();
+        
+        return $results = $a->listarAnimais();
     }
 }
 ?>
