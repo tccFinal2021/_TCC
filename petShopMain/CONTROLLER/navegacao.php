@@ -53,14 +53,17 @@ if(isset($_POST["btnInserirProd"]))
     require_once '../CONTROLLER/produtoController.php';
     $pController = new ProdutoController();
 
-    if($pController->inserir($_POST["txtCodEmbalagem"], $_POST["txtNomeProd"], date('Y-m-d', strtotime($_POST['dataValidade'])), 
+    if($pController->inserir($_POST["txtImgUrl"], $_POST["txtCodEmbalagem"], $_POST["txtNomeProd"], date('Y-m-d', strtotime($_POST['dataValidade'])), 
     $_POST["txtQuantidadeProd"], $_POST["txtValorProd"], $_POST["txtMarcaProd"], $_POST["txtDescProd"]))
     { 
-        include_once '../View/cadastroRealizado.php';
+        header("location:../View/cadastroRealizado.php")
+            or die("não ignore meu header");
+    
     }
     else
     {
-        include_once '../View/cadastroNaoRealizado.php';
+        header("location:../View/cadastroNRealizado.php")
+        or die("não ignore meu header");
     }
 
 }
@@ -213,63 +216,6 @@ if (isset($_POST["btnCadastrarAdm"])){
         }
     }
 
-/*
-if(isset($_POST["btnAtualizar"]))
- {
-    require_once '../Controller/UsuarioController.php';
- 
-    $uController = new UsuarioController();
- 
-    if($uController->atualizar($_POST["txtID"], $_POST["txtNome"], 
-    $_POST["txtSobrenome"], $_POST["txtEmail"],
-    date('Y-m-d', strtotime($_POST['txtData']))))
-    { 
-        include_once '../View/atualizacaoRealizada.php';
-    }
-    else
-    {
-        include_once '../View/operacaoNaoRealizada.php';
-    }
- 
-    }
 
-    if(isset($_POST["btnAtualizacaoCadastro"]) || isset($_POST["btnOperacaoNRealizada"]) || isset($_POST["btnInfInserir"]))
-    {
-    include_once '../View/principal.php';
-    }
-//login
-    if(isset($_POST["btnLogin"]))
-    {
-        require_once 'UsuarioController.php';
-    
-        $uController = new UsuarioController();
-    
-        if($uController->login($_POST['txtLogin'], $_POST['txtSenha']))
-        { 
-            include_once '../View/principal.php';
-        }
-        else
-        {
-            include_once '../View/cadastroNaoRealizado.php';
-        }
-    }
-
-    if(isset($_POST["btnAddFormacao"]))
-    {
-        require_once '../Controller/FormacaoAcadController.php';
-        include_once '../Model/Usuario.php';
-        $fController = new FormacaoAcadController();
-        
-        if($fController->inserir(date('Y-m-d', strtotime($_POST['txtInicioFA'])), date('Y-m-d', 
-        strtotime($_POST["txtFimFA"])), $_POST["txtDescFA"], unserialize($_SESSION['Usuario'])->getID()) != 
-        false)
-        { 
-            include_once '../View/informacaoInserida.php';
-        }
-        else
-        {
-            include_once '../View/operacaoNaoRealizada.php';
-        }
-   */
 
 ?>

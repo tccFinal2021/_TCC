@@ -13,6 +13,12 @@
             </div>
 
             <div class="form-group">
+                <label for="txtNomeProd">Url da Imagem:</label>
+                <input type="text" class="form-control" placeholder="Digite a url da imagem do produto" name="txtImgUrl" >
+                <span class="error">* </span>
+            </div>
+
+            <div class="form-group">
                 <label for="txtCodEmbalagem">Código da embalagem:</label>
                 <input class="form-control" type="number" placeholder="Digite o código da embalagem do produto" name="txtCodEmbalagem">
                 <span class="error">* </span>

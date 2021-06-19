@@ -2,6 +2,7 @@
 
 class Produto{
     private $cod_produto;
+    private $imgurl;
     private $cod_embalagem;
     private $nome;
     private $validade;
@@ -18,6 +19,13 @@ public function setCodProduto($cod_produto){
 }
 public function getCodProduto(){
     return $this -> cod_produto;
+}
+//id do produto no bd
+public function setImgUrl($imgurl){
+    $this ->imgurl = $imgurl;
+}
+public function getImgUrl(){
+    return $this -> imgurl;
 }
 //codigo da embalagem
 public function setCodEmbalagem($cod_embalagem){
@@ -80,8 +88,8 @@ public function inserirBD(){
     if ($conn-> connect_error){
         die ("conection failed: ". $conn->connect_error); 
     }
-    $sql = "INSERT INTO produto (nome, cod_embalagem, validade, quantidade_estoque, valor, marca, descricao)
-    VALUES ('".$this->nome."','".$this->cod_embalagem."', '".$this->validade."', '".$this->quantidade_estoque."', '".$this->valor."', '".$this->marca."', '".$this->descricao."')";
+    $sql = "INSERT INTO produto (imgurl, nome, cod_embalagem, validade, quantidade_estoque, valor, marca, descricao)
+    VALUES ('".$this->imgurl."','".$this->nome."','".$this->cod_embalagem."', '".$this->validade."', '".$this->quantidade_estoque."', '".$this->valor."', '".$this->marca."', '".$this->descricao."')";
 
     if ($conn->query($sql) === TRUE) {
         $this ->id = mysqli_insert_id($conn);

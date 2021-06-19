@@ -18,7 +18,7 @@ class AnimalController{
 
 
         $r = $animal->inserirBDA();
-        //$_SESSION['Usuario'] = serialize($usuario);
+       
         return $r;
     }
 

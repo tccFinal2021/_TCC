@@ -3,9 +3,10 @@
 class ProdutoController{
     
 
-    public function inserir($cod_embalagem, $nome, $validade, $quantidade_estoque, $valor, $marca, $descricao){
+    public function inserir($imgurl, $cod_embalagem, $nome, $validade, $quantidade_estoque, $valor, $marca, $descricao){
         require_once '../MODEL/produto.php';
         $produto = new Produto();
+        $produto->setImgUrl($imgurl);
         $produto->setCodEmbalagem($cod_embalagem);
         $produto->setNome($nome);
         $produto->setValidade($validade);
@@ -15,7 +16,7 @@ class ProdutoController{
         $produto->setDescricao($descricao);
 
         $r = $produto->inserirBD();
-        //$_SESSION['Usuario'] = serialize($usuario);
+        
         return $r;
     }
 

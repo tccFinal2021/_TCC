@@ -83,6 +83,7 @@
                 while($row = $results->fetch_object()) {
                 echo '<tr>';
                 echo '<td  class="column "style="width: 5%;">'.$row->cod_produto.'</td>';
+                echo '<td  class="column"style="width: 5%;">'.$row->imgurl.'</td>';
                 echo '<td  class="column"style="width: 5%;">'.$row->cod_embalagem.'</td>';
                 echo '<td  class="column"style="width: 5%;">'.$row->nome.'</td>';
                 echo '<td  class="column"style="width: 5%;">'.$row->validade.'</td>';
