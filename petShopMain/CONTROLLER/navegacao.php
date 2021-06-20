@@ -69,31 +69,9 @@ if(isset($_POST["btnInserirProd"]))
 }
 
 
-//botao de login para adm chama a pag de login de adm
-if(isset($_POST["btnLogarAdm"]))
-{
-    header("location:../VIEW/ADMLogin.php")
-            or die("não ignore meu header");
-}
 
 
-// verificando se adm está cadastrado
-if(isset($_POST["btnLogandoAdm"]))
-{
- require_once '../Controller/admController.php';
- $aController = new AdmController();
- 
- if($aController->login($_POST["txtEmailADM"], $_POST["txtSenhaADM"]))
- { 
-    include_once '../VIEW/admPrincipal.php';
- }
- else
- {
- 
- }
-}
-
-
+//MENU ADM
 //click do botao que chama lista de usuarios cadastrados
 if (isset($_POST["btnListaUsuariosCadastrados"])){
     header("Location: ../VIEW/listaUsuariosCad.php") 
@@ -125,7 +103,7 @@ if (isset($_POST["btnListaRecebedores"])){
     or die("não ignore meu head");
 }
 
-
+//ADMINISTRADOR
 //click do botao btnVoltarHome da lista de cadastrados
 if (isset($_POST["btnVoltarHome"])){
     header("location:../VIEW/admPrincipal.php")
@@ -154,6 +132,30 @@ if (isset($_POST["btnCadastrarAdm"])){
     }
 }
 
+//botao de login para adm chama a pag de LOGIN de adm
+if(isset($_POST["btnLogarAdm"]))
+{
+    header("location:../VIEW/ADMLogin.php")
+            or die("não ignore meu header");
+}
+
+
+// verificando se adm está cadastrado
+if(isset($_POST["btnLogandoAdm"]))
+{
+ require_once '../Controller/admController.php';
+ $aController = new AdmController();
+ 
+ if($aController->login($_POST["txtEmailADM"], $_POST["txtSenhaADM"]))
+ { 
+    include_once '../VIEW/admPrincipal.php';
+ }
+ else
+ {
+ 
+ }
+}
+//RECEBEDOR
 //botao de cadastro para recebedor de novidades
 
          if (isset ($_POST["btnReceberNovdd"])){
@@ -166,6 +168,7 @@ if (isset($_POST["btnCadastrarAdm"])){
      or die("não ignore meu header");
     }
 
+//PETS
 //botao que chama a opção de cadastrar pet para adoção
 if(isset($_POST["btnCadPetForm"]))
     {
@@ -173,8 +176,35 @@ if(isset($_POST["btnCadPetForm"]))
      or die("não ignore meu header");
 
     }
+    //click do botao btnVoltarHome da lista cards de pets
+if (isset($_POST["btnVoltarHomeNormal"])){
+    header("location:../tttt.php")
+     or die("não ignore meu header");
+}
+    //botao que chama a lista de gatos
+    
+    if(isset($_POST["btnBuscarGatos"]))
+    {
+        header("location:../VIEW/listarGatos.php")
+     or die("não ignore meu header");
+    }
 
+    //botao que chama lista de dogs
+    
+    
+     if(isset($_POST["btnBuscarCaes"]))
+     {
+         header("location:../VIEW/listarCachorros.php")
+      or die("não ignore meu header");
+     }
 
+    //botao que chama lista de animais gerais
+    if(isset($_POST["btnListarOutrosA"]))
+     {
+         header("location:../VIEW/listaAnimaisCadastrados.php")
+      or die("não ignore meu header");
+     }
+    
     //inserir animal
 
     if(isset($_POST["btnCadPet"]))
@@ -190,13 +220,16 @@ if(isset($_POST["btnCadPetForm"]))
             }
         }
         
-        if($aController->inserirBDA($_POST["txtNome"], $_POST["txtEmail"],$_POST["txtTel"], $_POST["txtCaracteristicas"], 
+        if($aController->inserirBDA($_POST["txtNome"], $_POST["txtEmail"],$_POST["txtTel"], $_POST["txtEspecie"],$_POST["txtCaracteristicas"], $_POST["txtImgUrl"],
         $_POST["txtSaude"], $sexo)){ 
-            include_once '../View/cadastroRealizado.php';
+            header("location:../VIEW/cadastroRealizado.php")
+     or die("não ignore meu header");
         }
         else
         {
-            include_once '../View/cadastroNaoRealizado.php';
+            header("location:../VIEW/cadastroNRealizado.php")
+     or die("não ignore meu header");
+          
         }
 
     }
@@ -227,6 +260,6 @@ if(isset($_POST["btnCadPetForm"]))
         }
     }
 
-
+    
 
 ?>

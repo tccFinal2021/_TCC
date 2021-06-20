@@ -79,14 +79,27 @@
                 <input class="form-control" type="number" name="txtTel" placeholder="Digite o numero do seu telefone">
                 <span class="error">*</span>
             </div>
+
+            <div class="form-group">
+                <label for="txtEspecie">Espécie:</label>
+                <input type="name" class="form-control"  placeholder="Ex: Cachorro" name="txtEspecie" >
+                <span class="error">* </span>
+            </div>
+
+            <div class="form-group">
+                <label for="txtImgUrl">Url da imagem:</label>
+                <input type="name" class="form-control"  placeholder="Ex: www.google.com/rotweiller" name="txtImgUrl" >
+                <span class="error">* </span>
+            </div>
+
             <div class="form-group">
                 <label for="comment">Caracteristicas:</label>
-                <textarea class="form-control" name="txtCaracteristicas" rows="5" ></textarea>
+                <textarea class="form-control" name="txtCaracteristicas" rows="2"></textarea>
                 <span class="error">* </span>
             </div>
             <div class="form-group">
                 <label for="comment">Saúde:</label>
-                <textarea class="form-control" name="txtSaude" rows="5" ></textarea>
+                <textarea class="form-control" name="txtSaude" rows="2" ></textarea>
             <span class="error">* </span>
             </div>
             <span>Sexo:</span>

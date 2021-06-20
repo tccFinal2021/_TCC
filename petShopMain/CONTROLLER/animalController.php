@@ -1,18 +1,17 @@
 <?php
-/*
-if(!isset($_SESSION)){
-    session_start();
-}*/
+
 class AnimalController{
     
 
-    public function inserirBDA($nome, $email, $tel, $caracteristicas, $saude, $sexo){
+    public function inserirBDA($nome, $email, $tel, $especie, $caracteristicas, $imgurl, $saude, $sexo){
         require_once '../MODEL/animal.php';
         $animal = new Animal();
         $animal->setNome($nome);
         $animal->setEmail($email);
         $animal->setTel($tel);
+        $animal->setEspecie($especie);
         $animal->setCaracteristicas($caracteristicas);
+        $animal->setImgUrl($imgurl);
         $animal->setSaude($saude);
         $animal->setSexo($sexo);
 
@@ -29,6 +28,24 @@ class AnimalController{
         $a = new Animal();
         
         return $results = $a->listarAnimais();
+    }
+
+    public function listarGatos()
+    {
+        require_once '../MODEL/animal.php.php';
+        
+        $a = new Animal();
+        
+        return $results = $a->listarGatos();
+    }
+
+    public function listarCachorros()
+    {
+        require_once '../MODEL/animal.php.php';
+        
+        $a = new Animal();
+        
+        return $results = $a->listarCachorros();
     }
 }
 ?>

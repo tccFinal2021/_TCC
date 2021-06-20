@@ -77,9 +77,7 @@
             <form action="../CONTROLLER/navegacao.php" method="post">
               <button
                 class="btn btn-outline-success"
-                class="btnBuscarGatos"
-                type="button"
-              >
+                name="btnBuscarGatos">
                 Procurar gatos
               </button>
             </form>
@@ -97,10 +95,21 @@
             <p class="card-text">
               Se você está querendo adotar um cão, tem um te esperando aqui.
             </p>
+            <form action="../CONTROLLER/navegacao.php" method="post" style="margin-top: 310px;">
+              <button name="btnBuscarCaes" class="btn btn-outline-success">
+                Procurar Cães
+              </button>
+            </form>
+          
           </div>
-          <form action="../CONTROLLER/navegacao.php" method="post">
-            <button name="btnCadPetForm" class="btn btn-outline-success">
-              Cadastrar
+          <form action="../CONTROLLER/navegacao.php" method="post" style="margin-left: 20px;">
+            
+            <button name="btnListarOutrosA" class="btn btn-outline-success" >
+              Procurar Todos Os Animais
+            </button>
+
+            <button name="btnCadPetForm" class="btn btn-outline-success" style="margin-left: 25px;">
+              Cadastrar Seu Pet
             </button>
           </form>
 
