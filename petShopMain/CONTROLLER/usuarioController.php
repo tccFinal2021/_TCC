@@ -1,47 +1,47 @@
 <?php
-/*if(!isset($_SESSION)){
+if(!isset($_SESSION)){
     session_start();
-}*/
+}
 class UsuarioController{
-    
-
-    public function inserir($nome, $sobrenome, $dataNascimento, $email, $senha){
-        require_once '../MODEL/Usuario.php';
+    public function inserirBD($nome, $sobrenome, $email, $senha){
+        require_once '../MODEL/usuario.php';
         $usuario = new usuario();
         $usuario->setNome($nome);
         $usuario->setSobrenome($sobrenome);
-        $usuario->setDataNascimento($dataNascimento);
         $usuario->setEmail($email);
         $usuario->setSenha($senha);
         //return $usuario->getNome();
 
+        
         $r = $usuario->inserirBD();
         $_SESSION['Usuario'] = serialize($usuario);
         return $r;
     }
 
 
-    public function atualizar($id, $nome, $sobrenome, $email, $dataNascimento){
-        require_once '../MODEL/Usuario.php';
+    public function atualizarBD($id, $nome, $sobrenome, $email /*$dataNascimento*/){
+        require_once '../MODEL/usuario.php';
         $usuario = new usuario();
         $usuario->setId($id);
         $usuario->setNome($nome);
         $usuario->setSobrenome($sobrenome);
         $usuario->setEmail($email);
-        $usuario->setDataNascimento($dataNascimento);
+        //$usuario->setDataNascimento($dataNascimento);
         $r = $usuario->atualizarBD();
         $_SESSION['usuario'] = serialize($usuario);
         return $r;
     }
-    public function gerarLista()
-    {
-        require_once '../MODEL/usuario.php';
+    public function logarBD($email, $senha){
+        require_once '../Model/usuario.php';
+        $usuario = new usuario();
+        $usuario->setEmail($email);
+        $usuario->setSenha($senha);
+        //return $usuario->getNome();
+
         
-        $u = new Adm();
-        
-        return $results = $u->listaUsuarios();
+        $r = $usuario->logarBD();
+        $_SESSION['Usuario'] = serialize($usuario);
+        return $r;
     }
-   
-   
 }
 ?>
