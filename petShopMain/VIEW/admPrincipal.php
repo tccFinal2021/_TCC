@@ -1,7 +1,7 @@
 <?php
   include_once 'headerAdm.php';
 ?>
-      <section id="home-info" class="back-light">
+      <section id="home-info" class="back-light" >
         <div class="info-img"></div>
         <div class="info-content">
           <h2><span id="textPrimary">Visite</span> nosso blog</h2>

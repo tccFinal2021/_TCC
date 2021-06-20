@@ -74,10 +74,10 @@
             </p>
           </div>
           <div class="card-body">
-            <form action="../CONTROLLER/navegacao.php">
+            <form action="../CONTROLLER/navegacao.php" method="post">
               <button
                 class="btn btn-outline-success"
-                id="loginButton"
+                class="btnBuscarGatos"
                 type="button"
               >
                 Procurar gatos
@@ -99,10 +99,12 @@
             </p>
           </div>
           <form action="../CONTROLLER/navegacao.php" method="post">
-            <button name="btnCadPet" class="btn btn-outline-success">
+            <button name="btnCadPetForm" class="btn btn-outline-success">
               Cadastrar
             </button>
           </form>
+
+        
         </div>
       </div>
     </section>

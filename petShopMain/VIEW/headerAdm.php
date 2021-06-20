@@ -29,7 +29,7 @@ include_once '../CONTROLLER/admController.php';
                   list-style: none;
                   background-color: #007BFF;
                   width: 100%;
-                  height: 40px;
+                  height: 80px;
                   text-align: center;
                   flex-direction: row; 
               }
@@ -42,7 +42,6 @@ include_once '../CONTROLLER/admController.php';
                   display: flex;
                   flex-direction: row;  
                   display: inline-block;
-
               }
               
                
@@ -50,7 +49,7 @@ include_once '../CONTROLLER/admController.php';
             </style>
 
 
-    <main class="">
+    <main class="main">
       <div class="" id="headerPetShopHome">        
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand" href="admPrincipal.php">Petshop</a>
@@ -83,7 +82,7 @@ include_once '../CONTROLLER/admController.php';
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="vendas.php">Vendas</a>
+                <a class="nav-link" href="vendasLista.php">Vendas</a>
               </li>
               
               <li class="nav-item">
@@ -119,6 +118,10 @@ include_once '../CONTROLLER/admController.php';
 
                 <button name="btnListaUsuariosCadastrados" class="btn btn-light "  >
                 Listar Usuários Cadastrados
+                </button>
+
+                <button name="btnListaRecebedores" class="btn btn-light "  >
+                Listar Recebedores de Novidades
                 </button>
 
                 <button name="btnListaPost" class="btn btn-light " type="submit">

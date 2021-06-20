@@ -119,6 +119,12 @@ if (isset($_POST["btnListarProdutos"])){
     header("Location: ../VIEW/listaProdutosCadastrados.php") 
     or die("não ignore meu head");
 }
+//click do botao que chama lista de Recebedores de Novidades
+if (isset($_POST["btnListaRecebedores"])){
+    header("Location: ../VIEW/listaRecebedores.php") 
+    or die("não ignore meu head");
+}
+
 
 //click do botao btnVoltarHome da lista de cadastrados
 if (isset($_POST["btnVoltarHome"])){
@@ -160,8 +166,13 @@ if (isset($_POST["btnCadastrarAdm"])){
      or die("não ignore meu header");
     }
 
+//botao que chama a opção de cadastrar pet para adoção
+if(isset($_POST["btnCadPetForm"]))
+    {
+        header("location:../VIEW/inserirDoacao.php")
+     or die("não ignore meu header");
 
-
+    }
 
 
     //inserir animal

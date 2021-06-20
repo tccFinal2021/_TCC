@@ -43,7 +43,7 @@
                 <a class="nav-link" href="blog.php">Blog</a>
               </li>
               <li name="btnVendas"class="nav-item">
-                <a class="nav-link" href="vendas.php">Vendas</a>
+                <a class="nav-link" href="vendasLista.php">Vendas</a>
               </li>
               <li name="btnHome" class="nav-item">
                 <a class="nav-link" href="inserirDoacao.php">Doe um pet</a>
